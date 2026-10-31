@@ -1,0 +1,1357 @@
+
+/* QEPS STUDIOS BRAND COLOURS */
+
+:root {
+    --orange: #E45732;
+    --black: #111111;
+    --white: #FFFFFF;
+}
+
+/* GENERAL STYLING */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: var(--black);
+    color: var(--white);
+}
+
+/* HOMEPAGE */
+
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* BACKGROUND SLIDESHOW */
+
+.slideshow {
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+    background-color: #292929;
+}
+
+.slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+/* PERMANENT BLACK OVERLAY */
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.58);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* NAVIGATION */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 5%;
+    gap: 20px;
+}
+
+.logo {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: -3px;
+    line-height: 1;
+    color: var(--orange);
+    text-decoration: none;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+nav a {
+    font-family: Courier, "Courier New", monospace;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--orange);
+}
+
+/* MAIN HOMEPAGE TEXT */
+
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 32px;
+    padding: 30px 20px;
+}
+
+.hero-content h1 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: clamp(48px, 8vw, 110px);
+    font-weight: 700;
+    letter-spacing: -3px;
+    line-height: 0.95;
+    color: var(--white);
+}
+
+/* ORANGE BUTTON */
+
+.hero-btn {
+    display: inline-block;
+    background-color: var(--orange);
+    color: var(--black);
+    padding: 20px 36px;
+    font-family: Courier, "Courier New", monospace;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+    background-color: var(--white);
+    transform: translateY(-3px);
+}
+
+/* SLIDESHOW INDICATORS */
+
+.slider-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 30px 0 45px;
+}
+
+.slider-dot {
+    width: 35px;
+    height: 5px;
+    background-color: #999999;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider-dot.active {
+    width: 50px;
+    background-color: var(--orange);
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 768px) {
+
+    header {
+        flex-direction: column;
+        padding: 25px 15px;
+        gap: 25px;
+    }
+
+    .logo {
+        font-size: 40px;
+    }
+
+    nav {
+        transition: none;
+    }
+}
+
+
+
+/* WHAT WE DO */
+
+.services-section {
+    background: #EEE8D9;
+    padding: 100px 7%;
+}
+
+.services-intro {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.services-intro h1 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: clamp(48px, 7vw, 100px);
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: -3px;
+    line-height: 1;
+    color: #E45732;
+    margin-bottom: 25px;
+}
+
+.services-intro p {
+    font-family: Courier, "Courier New", monospace;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #555555;
+    line-height: 1.8;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border: 3px solid #111111;
+}
+
+.service-card {
+    padding: 50px 45px;
+    min-height: 320px;
+    background: transparent;
+    border-bottom: 3px solid #111111;
+}
+
+.service-card:nth-child(odd) {
+    border-right: 3px solid #111111;
+}
+
+.service-card:nth-last-child(-n+2) {
+    border-bottom: none;
+}
+
+.service-icon {
+    margin-bottom: 30px;
+}
+
+.service-icon svg {
+    width: 48px;
+    height: 48px;
+    stroke: #E45732;
+    stroke-width: 1.8;
+    fill: none;
+}
+
+.service-card h2 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    font-style: normal;
+    color: #111111;
+    margin-bottom: 18px;
+}
+
+.service-card p {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #444444;
+}
+
+.service-card:hover {
+    background: #E6D9C4;
+}
+
+@media (max-width: 600px) {
+    .services-section {
+        padding: 65px 5%;
+    }
+
+    .services-intro h1 {
+        font-size: 46px;
+        letter-spacing: -2px;
+    }
+
+    .services-intro p {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    .service-card {
+        padding: 25px 15px;
+        min-height: 290px;
+    }
+
+    .service-icon svg {
+        width: 34px;
+        height: 34px;
+    }
+
+    .service-card h2 {
+        font-size: 16px;
+    }
+
+    .service-card p {
+        font-size: 13px;
+    }
+}
+
+
+/* ==================================
+   QEPS ABOUT SECTION - IMAGE MATCH
+================================== */
+
+#about {
+    display: block;
+    width: 100%;
+    min-height: auto;
+    background: #EEE8D9;
+    color: #111;
+    padding: 44px 3.8% 55px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+#about *,
+#about *::before,
+#about *::after {
+    box-sizing: border-box;
+}
+
+/* TOP HALF: TEXT LEFT, PHOTO RIGHT */
+
+#about .about-intro {
+    display: grid;
+    grid-template-columns: 1.35fr 0.95fr;
+    gap: 42px;
+    align-items: start;
+    padding: 0 0 38px;
+    margin: 0;
+    width: 100%;
+}
+
+#about .about-copy {
+    min-width: 0;
+    text-align: left;
+}
+
+#about .about-title {
+    color: #D94713;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: clamp(46px, 5.7vw, 82px);
+    font-weight: 900;
+    font-style: normal;
+    letter-spacing: -3.5px;
+    line-height: 0.94;
+    text-transform: uppercase;
+    text-align: left;
+    margin: 0 0 18px;
+    padding: 0;
+}
+
+#about .about-tagline {
+    font-family: Courier, "Courier New", monospace;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    color: #111;
+    text-align: left;
+    margin: 0 0 27px;
+}
+
+#about .about-description p {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.32;
+    text-align: left;
+    color: #111;
+    margin: 0 0 15px;
+}
+
+#about .about-signature {
+    color: #D94713;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 24px 0 0;
+    text-align: left;
+}
+
+/* STUDIO PHOTOGRAPH */
+
+#about .about-photo {
+    display: block;
+    width: 100%;
+    height: 480px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 2px solid #111;
+}
+
+#about .about-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(100%);
+}
+
+/* DIVIDER AND WHAT WE DO */
+
+#about .what-we-do {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 30px 0 0;
+    background: transparent;
+    border-top: 4px solid #111;
+}
+
+#about .services-heading {
+    text-align: left;
+    margin: 0 0 34px;
+    padding: 0;
+}
+
+#about .services-heading h2 {
+    font-family: Helvetica, Arial, sans-serif;
+    color: #D94713;
+    font-size: clamp(48px, 6vw, 80px);
+    font-weight: 900;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: -3px;
+    text-align: left;
+    margin: 0 0 4px;
+    padding: 0;
+}
+
+#about .services-heading p {
+    font-family: Courier, "Courier New", monospace;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 1.5;
+    text-align: left;
+    color: #111;
+    margin: 0;
+}
+
+/* EXACT 2 X 2 SERVICE BLOCKS */
+
+#about .services-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    border: 3px solid #111;
+    background: transparent;
+}
+
+#about .service-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-width: 0;
+    min-height: 250px;
+    padding: 25px 30px 28px;
+    margin: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+    text-align: left;
+}
+
+#about .service-card:nth-child(odd) {
+    border-right: 3px solid #111;
+}
+
+#about .service-card:nth-child(-n+2) {
+    border-bottom: 3px solid #111;
+}
+
+#about .service-icon {
+    display: block;
+    width: 75px;
+    height: 75px;
+    margin: 0 0 10px;
+}
+
+#about .service-icon svg {
+    display: block;
+    width: 75px;
+    height: 75px;
+    fill: none;
+    stroke: #D94713;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+#about .service-card h3 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: clamp(19px, 2.35vw, 29px);
+    font-weight: 900;
+    font-style: normal;
+    line-height: 1.1;
+    letter-spacing: -0.7px;
+    color: #111;
+    text-align: left;
+    margin: 0 0 10px;
+}
+
+#about .service-card p {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.35;
+    color: #222;
+    text-align: left;
+    margin: 0;
+}
+
+#about .service-card:hover {
+    background: #E6D9C4;
+}
+
+/* TABLET */
+
+@media (max-width: 850px) {
+    #about .about-intro {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    #about .about-photo {
+        height: 420px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    #about {
+        padding: 40px 5% 50px;
+    }
+
+    #about .about-title {
+        font-size: clamp(40px, 10vw, 60px);
+        letter-spacing: -2px;
+    }
+
+    #about .about-tagline {
+        font-size: 12px;
+    }
+
+    #about .about-photo {
+        height: 320px;
+    }
+
+    #about .services-heading h2 {
+        font-size: clamp(40px, 10vw, 58px);
+        letter-spacing: -2px;
+    }
+
+    #about .services-heading p {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    #about .service-card {
+        padding: 20px 13px;
+        min-height: 255px;
+    }
+
+    #about .service-icon,
+    #about .service-icon svg {
+        width: 43px;
+        height: 43px;
+    }
+
+    #about .service-card h3 {
+        font-size: 15px;
+        overflow-wrap: anywhere;
+    }
+
+    #about .service-card p {
+        font-size: 12px;
+        line-height: 1.45;
+    }
+}
+/* GALLERY SECTION */
+
+#gallery {
+    width: 100%;
+    background-color: #0B0B0B;
+    color: #FFFFFF;
+    padding: 90px 4% 110px;
+    scroll-margin-top: 80px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+#gallery *,
+#gallery *::before,
+#gallery *::after {
+    box-sizing: border-box;
+}
+
+/* ==========================
+   GALLERY HEADING
+========================== */
+
+#gallery .gallery-heading {
+    text-align: left;
+    margin: 0 0 35px;
+    padding: 0;
+}
+
+#gallery .gallery-heading h2 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: clamp(55px, 8vw, 110px);
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: -4px;
+    line-height: 1;
+    text-transform: uppercase;
+    text-align: left;
+    color: #E45732;
+    margin: 0 0 15px;
+    padding: 0;
+}
+
+#gallery .gallery-heading p {
+    font-family: Courier, "Courier New", monospace;
+    font-size: 14px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 2px;
+    line-height: 1.6;
+    text-transform: uppercase;
+    text-align: left;
+    color: #BBBBBB;
+    margin: 0;
+}
+
+/* ==========================
+   CATEGORY FILTER BUTTONS
+========================== */
+
+#gallery .gallery-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 40px;
+    padding: 0;
+}
+
+#gallery .filter-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: transparent;
+    color: #FFFFFF;
+
+    border: 1px solid #666666;
+    border-radius: 0;
+
+    padding: 12px 18px;
+    margin: 0;
+
+    font-family: Courier, "Courier New", monospace;
+    font-size: 12px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease;
+}
+
+#gallery .filter-btn:hover,
+#gallery .filter-btn.active {
+    background-color: #E45732;
+    color: #111111;
+    border-color: #E45732;
+}
+
+#gallery .filter-btn:focus-visible {
+    outline: 2px solid #E45732;
+    outline-offset: 4px;
+}
+
+/* ==========================
+   PHOTOGRAPHY GRID
+========================== */
+
+#gallery .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* INDIVIDUAL PHOTO BLOCK */
+
+#gallery .gallery-item {
+    position: relative;
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+
+    overflow: hidden;
+    background-color: #202020;
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* PHOTOGRAPHS */
+
+#gallery .gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.5s ease;
+}
+
+#gallery .gallery-item:hover img {
+    transform: scale(1.06);
+}
+
+/* ==========================
+   PHOTO CAPTIONS
+========================== */
+
+#gallery .gallery-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 50px 25px 25px;
+
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(0, 0, 0, 0.92)
+    );
+
+    text-align: left;
+}
+
+/* CATEGORY TITLE */
+
+#gallery .gallery-caption h3 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: clamp(18px, 2.5vw, 30px);
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: -0.5px;
+    line-height: 1.15;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+    margin: 0 0 8px;
+    padding: 0;
+}
+
+/* CATEGORY DESCRIPTION */
+
+#gallery .gallery-caption p {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.5;
+
+    color: #DDDDDD;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==========================
+   GALLERY FILTERING
+========================== */
+
+#gallery .gallery-item.is-hidden {
+    display: none;
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media (max-width: 900px) {
+
+    #gallery {
+        padding: 75px 5% 90px;
+    }
+
+    #gallery .gallery-heading h2 {
+        font-size: clamp(55px, 9vw, 85px);
+    }
+
+    #gallery .gallery-grid {
+        gap: 18px;
+    }
+
+    #gallery .gallery-caption {
+        padding: 40px 18px 20px;
+    }
+
+    #gallery .gallery-caption h3 {
+        font-size: 21px;
+    }
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width: 600px) {
+
+    #gallery {
+        padding: 65px 5% 80px;
+    }
+
+    /* HEADING */
+
+    #gallery .gallery-heading {
+        margin-bottom: 30px;
+    }
+
+    #gallery .gallery-heading h2 {
+        font-size: clamp(48px, 12vw, 65px);
+        letter-spacing: -2px;
+        margin-bottom: 12px;
+    }
+
+    #gallery .gallery-heading p {
+        font-size: 11px;
+        letter-spacing: 1px;
+        line-height: 1.6;
+    }
+
+    /* FILTERS */
+
+    #gallery .gallery-filters {
+        gap: 8px;
+        margin-bottom: 28px;
+    }
+
+    #gallery .filter-btn {
+        font-size: 10px;
+        letter-spacing: 0.5px;
+        padding: 10px 12px;
+    }
+
+    /* ONE PHOTO PER ROW */
+
+    #gallery .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    #gallery .gallery-item {
+        aspect-ratio: 4 / 5;
+    }
+
+    /* CAPTIONS */
+
+    #gallery .gallery-caption {
+        padding: 40px 18px 18px;
+    }
+
+    #gallery .gallery-caption h3 {
+        font-size: 22px;
+        margin-bottom: 6px;
+    }
+
+    #gallery .gallery-caption p {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+}
+
+/* ==========================
+   ACCESSIBILITY
+========================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    #gallery .filter-btn,
+    #gallery .gallery-item img {
+        transition: none;
+    }
+
+    #gallery .gallery-item:hover img {
+        transform: none;
+    }
+}
+
+/* ====================================
+   QEPS STUDIOS — CONTACT SECTION
+   Cream:  #EEE8D9
+   Orange: #E45732
+   Black:  #111111
+==================================== */
+
+#contact {
+    width: 100%;
+    background: #EEE8D9;
+    color: #111111;
+    padding: 85px 4% 0;
+    font-family: Helvetica, Arial, sans-serif;
+    scroll-margin-top: 80px;
+}
+
+#contact *,
+#contact *::before,
+#contact *::after {
+    box-sizing: border-box;
+}
+
+/* MAIN HEADING */
+
+#contact .contact-heading {
+    margin: 0 0 60px;
+}
+
+#contact .contact-heading h2 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: clamp(55px, 8vw, 110px);
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: -4px;
+    line-height: 1;
+    color: #E45732;
+    margin: 0 0 15px;
+}
+
+#contact .contact-heading p {
+    font-family: Courier, "Courier New", monospace;
+    font-size: 14px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 1.5px;
+    line-height: 1.6;
+    color: #111111;
+    margin: 0;
+}
+
+/* TWO-COLUMN LAYOUT */
+
+#contact .contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 65px;
+    align-items: start;
+    padding-bottom: 90px;
+}
+
+/* LEFT: CONTACT DETAILS */
+
+#contact .contact-info h3 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: clamp(30px, 3.5vw, 48px);
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    margin: 0 0 22px;
+}
+
+#contact .contact-intro {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+    max-width: 460px;
+    margin: 0 0 45px;
+}
+#contact .contact-detail {
+    border-top: none;
+    padding: 22px 0;
+}
+
+#contact .contact-detail + .contact-detail {
+    border-top: 2px solid #111111;
+}
+#contact .contact-detail h4 {
+    font-family: Courier, "Courier New", monospace;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #E45732;
+    margin: 0 0 12px;
+}
+
+#contact .contact-detail p {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+}
+
+
+/* ONE LINE AFTER THE INTRO PARAGRAPH */
+
+#contact .contact-intro {
+    margin-bottom: 0;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #111111;
+}
+
+/* CONTACT DETAILS - NO EXTRA LINES */
+
+#contact .contact-detail {
+    border: none;
+    padding: 25px 0 0;
+}
+
+/* EMAIL AND SOCIAL HEADINGS */
+
+#contact .contact-detail h4 {
+    font-family: Courier, "Courier New", monospace;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #E45732;
+    margin: 0 0 12px;
+}
+
+/* SOCIAL LINKS STACKED VERTICALLY */
+
+#contact .contact-socials {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+#contact .contact-socials a {
+    font-family: Courier, "Courier New", monospace;
+    font-size: 13px;
+    font-weight: 700;
+    color: #111111;
+    text-decoration: none;
+    border-bottom: 2px solid #E45732;
+    padding-bottom: 4px;
+}
+
+#contact .contact-socials a:hover {
+    color: #E45732;
+}
+
+
+#contact .contact-note {
+    margin-top: 45px;
+}
+
+#contact .contact-note p {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: clamp(25px, 3vw, 42px);
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    color: #E45732;
+    max-width: 440px;
+    margin: 0;
+}
+
+/* RIGHT: ENQUIRY FORM */
+
+#contact .contact-form-wrapper {
+    background: #EEE8D9;
+    padding: 38px;
+    border: 2px solid #111111;
+}
+
+#contact .contact-form-wrapper h3 {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: clamp(25px, 3vw, 38px);
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: -1px;
+    margin: 0 0 32px;
+}
+
+/* FORM LABELS */
+
+#contact .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+#contact .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+#contact .form-group label {
+    font-family: Courier, "Courier New", monospace;
+    font-size: 12px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 1px;
+    color: #111111;
+}
+
+/* FORM INPUTS */
+
+#contact .form-group input,
+#contact .form-group select,
+#contact .form-group textarea {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    background: #FFFFFF;
+    color: #111111;
+    border: 1px solid #111111;
+    border-radius: 0;
+    padding: 15px 14px;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.4;
+    outline: none;
+}
+
+#contact .form-group textarea {
+    resize: vertical;
+    min-height: 130px;
+}
+
+#contact .form-group input:focus,
+#contact .form-group select:focus,
+#contact .form-group textarea:focus {
+    border-color: #E45732;
+    outline: 2px solid #E45732;
+    outline-offset: 1px;
+}
+
+#contact .form-group input::placeholder,
+#contact .form-group textarea::placeholder {
+    color: #777777;
+}
+
+/* SUBMIT BUTTON */
+
+#contact .contact-submit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    width: 100%;
+    background: #E45732;
+    color: #FFFFFF;
+    border: 2px solid #E45732;
+    border-radius: 0;
+    padding: 17px 20px;
+    font-family: Courier, "Courier New", monospace;
+    font-size: 14px;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+#contact .contact-submit span {
+    font-size: 22px;
+}
+
+#contact .contact-submit:hover {
+    background: #111111;
+    border-color: #111111;
+    color: #FFFFFF;
+}
+
+#contact .contact-submit:focus-visible {
+    outline: 2px solid #111111;
+    outline-offset: 4px;
+}
+
+#contact .contact-form-status {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+#contact .contact-form-status:empty {
+    display: none;
+}
+
+/* FOOTER */
+
+#contact .contact-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-top: 3px solid #111111;
+    padding: 28px 0;
+}
+
+#contact .contact-footer-logo {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: -2px;
+    color: #E45732;
+}
+
+#contact .contact-footer p {
+    font-family: Courier, "Courier New", monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+#contact .contact-footer a {
+    font-family: Courier, "Courier New", monospace;
+    font-size: 12px;
+    font-weight: 700;
+    color: #111111;
+    text-decoration: none;
+}
+
+#contact .contact-footer a:hover {
+    color: #E45732;
+}
+
+/* TABLET */
+
+@media (max-width: 900px) {
+    #contact {
+        padding: 70px 5% 0;
+    }
+
+    #contact .contact-layout {
+        gap: 35px;
+    }
+
+    #contact .contact-form-wrapper {
+        padding: 25px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+    #contact {
+        padding: 60px 5% 0;
+    }
+
+    #contact .contact-heading {
+        margin-bottom: 40px;
+    }
+
+    #contact .contact-heading h2 {
+        font-size: clamp(48px, 12vw, 70px);
+        letter-spacing: -2px;
+    }
+
+    #contact .contact-heading p {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    #contact .contact-layout {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        padding-bottom: 65px;
+    }
+
+    #contact .contact-info h3 {
+        font-size: 34px;
+    }
+
+    #contact .contact-intro {
+        font-size: 16px;
+    }
+
+    #contact .contact-note p {
+        font-size: 30px;
+    }
+
+    #contact .contact-form-wrapper {
+        padding: 22px;
+    }
+
+    #contact .contact-form-wrapper h3 {
+        font-size: 28px;
+    }
+
+    #contact .contact-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #contact .contact-socials a,
+    #contact .contact-submit {
+        transition: none;
+    }
+}
+
+
+
